@@ -171,12 +171,28 @@ bool full(node* node)
 
 }
 
-void complete(node*node)
+bool complete(node* node)
 {
-	if ((node->left != NULL && node->right == NULL) || (node->left == NULL && node->right != NULL))
-		printf("not completed \n");
+	if ((node != NULL)
+	{
+		if (height(node->right) != height(node->left))
+			return false;
+		return complete(node->right)*complete(node->left) * true;
+	}
 
 }
+
+void Checktype(node *root) {
+	if (full(root))
+		if (completed(root))
+			printf("Completed\n");
+		else
+			printf("Full\n");
+	else
+		printf("Not Full\n");
+}
+
+
 
 
 void main()
@@ -206,5 +222,7 @@ void main()
 	printf("the max value is :%d\n", maxValue(root));
 	printf("the max depth is :%d\n", maxDepth(root) - 1);
 	printLevelorder(root);
+	Checktype(root);
+
 
 }
